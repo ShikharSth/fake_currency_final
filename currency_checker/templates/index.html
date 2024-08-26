@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Currency Checker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  </head>
+  <body>
+    <div class="container"> 
+      <h1>Upload Currency Images</h1>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          <ul>
+            {% for message in messages %}
+              <li>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+      {% if color_similarity is defined and edge_similarity is defined %}
+        <p>Raw Color Similarity: {{ raw_color_similarity }}</p>
+        <p>Normalized Color Similarity: {{ color_similarity }}</p>
+        <p>Edge Similarity: {{ edge_similarity }}</p>
+      {% endif %}
+      <form method="post" enctype="multipart/form-data">
+        <label for="standard">Upload Standard Image:</label>
+        <input type="file" name="standard" id="standard">
+        <br>
+        <label for="test">Upload Test Image:</label>
+        <input type="file" name="test" id="test">
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+    <div class="visualization-container">
+      <h2>Visualizations</h2>
+      <div class="image-container">
+        <h3>Color Histograms</h3>
+        <img src="{{ url_for('static', filename='histogram.png') }}" alt="Color Histogram">
+      </div>
+      <div class="image-container">
+        <h3>Edge Images</h3>
+        <div>
+          <h4>Standard Image Edges</h4>
+          <img src="{{ url_for('static', filename='standard_edges.png') }}" alt="Standard Image Edges">
+        </div>
+        <div>
+          <h4>Test Image Edges</h4>
+          <img src="{{ url_for('static', filename='test_edges.png') }}" alt="Test Image Edges">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 20px;
+  overflow: auto; /* Apply overflow property to make the container scrollable */
+}
+
+h1 {
+  color: #333;
+}
+
+form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+form input[type="file"] {
+  display: block;
+  margin-bottom: 15px;
+}
+
+form input[type="submit"] {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+  background: #0056b3;
+}
+
+.visualization-container {
+  padding: 20px;
+}
+
+.visualization-container h2 {
+  color: #333;
+}
+
+.image-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.image-container h3 {
+  margin-top: 20px;
+  color: #333;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  margin: 10px;
+}
